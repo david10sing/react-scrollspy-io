@@ -1,0 +1,56 @@
+{
+  "name": "package-template",
+  "version": "1.0.0",
+  "description": "This is a template for create packages",
+  "main": "dist/bundle.js",
+  "repository": "git@github.com:david10sing/package-template.git",
+  "author": "David Ten Sing <david10sing@hotmail.com>",
+  "license": "MIT",
+  "private": true,
+  "devDependencies": {
+    "@types/react": "^17.0.2",
+    "@typescript-eslint/eslint-plugin": "^4.16.1",
+    "css-loader": "^5.1.1",
+    "eslint-config-prettier": "^8.1.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jest": "^24.1.5",
+    "eslint-plugin-json": "^2.1.2",
+    "eslint-plugin-prettier": "^3.3.1",
+    "eslint-plugin-react": "^7.22.0",
+    "eslint-plugin-spellcheck": "^0.0.17",
+    "file-loader": "^6.2.0",
+    "husky": "^5.1.3",
+    "lint-staged": "^10.5.4",
+    "mini-css-extract-plugin": "^1.3.9",
+    "prettier": "^2.2.1",
+    "prettier-eslint": "^12.0.0",
+    "resolve-url-loader": "^3.1.2",
+    "sass": "^1.32.8",
+    "sass-loader": "^11.0.1",
+    "ts-loader": "^8.0.17",
+    "typescript": "^4.2.3",
+    "webpack": "^5.24.3",
+    "webpack-cli": "^4.5.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack",
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx --quiet",
+    "lint-fix": "eslint . --ext .js,.jsx,.ts,.tsx --fix"
+  },
+  "lint-staged": {
+    "src/**/*.tsx": [
+      "eslint --fix",
+      "jest --runInBand --bail --findRelatedTests --forceExit"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "dependencies": {
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
+  }
+}
