@@ -1,7 +1,7 @@
 {
-  "name": "package-template",
+  "name": "react-scrollspy-io",
   "version": "1.0.0",
-  "description": "This is a template for create packages",
+  "description": "Package offering a scrollspy using intersection observer",
   "main": "dist/bundle.js",
   "repository": "git@github.com:david10sing/package-template.git",
   "author": "David Ten Sing <david10sing@hotmail.com>",
