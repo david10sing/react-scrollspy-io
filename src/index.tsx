@@ -1,12 +1,6 @@
-import React, { FC, ReactElement } from 'react';
-import styles from './styles.scss';
+import ScrollspyIO from './react-scrollspy-io';
+import Spy, { SpyItem } from './components/spy';
+import SpyOn from './components/spyOn';
 
-interface Props {
-  test?: string;
-}
-
-const Component: FC<Props> = (props): ReactElement => {
-  return <div>Hello World!</div>;
-};
-
-export default Component;
+export default ScrollspyIO;
+export { Spy, SpyItem, SpyOn };

@@ -3,7 +3,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
   entry: './src/index.tsx',
-  devtool: 'inline-source-map',
+  devtool: 'source-map',
   module: {
     rules: [
       {
@@ -30,16 +30,30 @@ module.exports = {
         test: /\.s[ac]ss$/i,
         use: [
           MiniCssExtractPlugin.loader,
+          // Translates CSS into CommonJS
+          'css-loader',
           {
             loader: 'resolve-url-loader',
             options: {
               keepQuery: true,
             },
           },
-          // Translates CSS into CommonJS
-          'css-loader',
           // Compiles Sass to CSS
           'sass-loader',
+        ],
+      },
+      {
+        test: /\.css$/i,
+        use: [
+          MiniCssExtractPlugin.loader,
+          // Translates CSS into CommonJS
+          'css-loader',
+          {
+            loader: 'resolve-url-loader',
+            options: {
+              keepQuery: true,
+            },
+          },
         ],
       },
       {
