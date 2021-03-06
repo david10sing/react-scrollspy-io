@@ -1,10 +1,6 @@
-import React, { FC, ReactElement, useContext, useEffect } from 'react';
+import React, { FC, PropsWithChildren, ReactElement, useContext, useEffect } from 'react';
 import { ListGroup } from 'react-bootstrap';
-import {
-  RcioActionsType,
-  RcioDispatchContext,
-  RcioStateContext,
-} from '../react-scrollspy-io-reducer';
+import { RcioActionsType, RcioDispatchContext, RcioStateContext } from '../react-scrollspy-io-reducer';
 import styles from './spy.module.scss';
 
 interface SpyProps {
@@ -15,7 +11,7 @@ interface SpyItemProps {
   target: string;
 }
 
-export const SpyItem: FC<SpyItemProps> = (props): ReactElement => {
+export const SpyItem: FC<PropsWithChildren<SpyItemProps>> = (props: PropsWithChildren<SpyItemProps>): ReactElement => {
   const { children, target } = props;
   const { intersectingId, ids, ObserverProps } = useContext(RcioStateContext);
   const dispatch = useContext(RcioDispatchContext);
@@ -29,10 +25,7 @@ export const SpyItem: FC<SpyItemProps> = (props): ReactElement => {
      * to cross the intersection.
      */
     document.addEventListener('scroll', () => {
-      if (
-        window.scrollY + window.innerHeight ===
-        window.document.body.scrollHeight
-      ) {
+      if (window.scrollY + window.innerHeight === window.document.body.scrollHeight) {
         ids.length &&
           dispatch({
             type: RcioActionsType.setIntersectingId,
@@ -47,35 +40,24 @@ export const SpyItem: FC<SpyItemProps> = (props): ReactElement => {
      * Scroll the section top to the rootMarginTop value
      */
     const targetPosition = document.getElementById(target)?.offsetTop || 0;
-    const rootMarginTop: number = parseInt(
-      ObserverProps?.rootMargin?.split(' ').shift()?.replace(/\D/g, '') || '0',
-      10
-    );
-    const offsetPosition = Math.round(
-      targetPosition - (rootMarginTop / 100) * window.innerHeight
-    );
+    const rootMarginTop: number = parseInt(ObserverProps?.rootMargin?.split(' ').shift()?.replace(/\D/g, '') || '0', 10);
+    const offsetPosition = Math.round(targetPosition - (rootMarginTop / 100) * window.innerHeight);
     window.scrollTo({
       top: offsetPosition,
       behavior: 'smooth',
     });
   };
   return (
-    <ListGroup.Item
-      action
-      as="li"
-      className={styles.scrollspy__item}
-      onClick={handleClick}
-      active={intersectingId === target}
-    >
+    <ListGroup.Item action as='li' className={styles.scrollspy__item} onClick={handleClick} active={intersectingId === target}>
       {children}
     </ListGroup.Item>
   );
 };
 
-const Spy: FC<SpyProps> = (props): ReactElement => {
+const Spy: FC<PropsWithChildren<SpyProps>> = (props: PropsWithChildren<SpyProps>): ReactElement => {
   const { children, top = 0 } = props;
   return (
-    <ListGroup as="ul" className={styles.rcio__spyRoot} style={{ top }}>
+    <ListGroup as='ul' className={styles.rcio__spyRoot} style={{ top }}>
       {children}
     </ListGroup>
   );

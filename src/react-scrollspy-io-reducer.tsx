@@ -1,15 +1,8 @@
+import { ChangeHandler, Options } from '@researchgate/react-intersection-observer/typings/types';
 import React from 'react';
-import {
-  ChangeHandler,
-  Options,
-} from '@researchgate/react-intersection-observer/typings/types';
 
-// @ts-ignore
-export const RcioStateContext: React.Context<RcioState> = React.createContext();
-export const RcioDispatchContext: React.Context<
-  React.Dispatch<RcioActions>
-  // @ts-ignore
-> = React.createContext();
+export const RcioStateContext: React.Context<RcioState> = React.createContext(null);
+export const RcioDispatchContext: React.Context<React.Dispatch<RcioActions>> = React.createContext(null);
 
 type ActionMap<M extends { [index: string]: unknown }> = {
   [Key in keyof M]: M[Key] extends undefined

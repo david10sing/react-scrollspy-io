@@ -1,12 +1,11 @@
-import React, { FC, ReactElement, useEffect, useReducer } from 'react';
+import React, { FC, PropsWithChildren, ReactElement, useEffect, useReducer } from 'react';
 import { Options } from '@researchgate/react-intersection-observer/typings/types';
 // eslint-disable-next-line
 // import 'intersection-observer-debugger';
 import { RcioActionsType, RcioDispatchContext, RcioReducer, RcioState, RcioStateContext } from './react-scrollspy-io-reducer';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
-
-export interface ScrollspyIOProps {
+interface ScrollspyIOProps {
   ObserverProps?: Options;
 }
 
@@ -30,7 +29,7 @@ export interface ScrollspyIOProps {
 
 const initialState: RcioState = { ids: [] };
 
-const ScrollspyIO: FC<ScrollspyIOProps> = (props): ReactElement => {
+const ScrollspyIO: FC<PropsWithChildren<ScrollspyIOProps>> = (props: PropsWithChildren<ScrollspyIOProps>): ReactElement => {
   const { children, ObserverProps } = props;
   const [state, dispatch] = useReducer(RcioReducer, initialState);
 
