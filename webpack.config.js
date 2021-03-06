@@ -72,8 +72,10 @@ module.exports = {
     extensions: ['.tsx', '.ts', '.js'],
   },
   output: {
-    filename: 'index.js',
-    path: path.resolve(__dirname, 'dist'),
     clean: true,
+    filename: 'index.js',
+    library: 'react-scrollspy-io',
+    libraryTarget: 'umd',
+    path: path.resolve(__dirname, 'dist'),
   },
 };
