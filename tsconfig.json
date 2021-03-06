@@ -17,6 +17,7 @@
     "node_modules",
     "typings/global",
     "typings/index.d.ts",
-    "./src/subClassA.ts"
+    "./src/subClassA.ts",
+    "dist/"
   ],
 }
