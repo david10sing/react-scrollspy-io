@@ -1,16 +1,12 @@
-import React, { PropsWithChildren, useContext, useEffect } from 'react';
+import React, { FC, PropsWithChildren, useContext, useEffect } from 'react';
 import Observer from '@researchgate/react-intersection-observer';
 import { Unobserve } from '@researchgate/react-intersection-observer/typings/types';
-import {
-  RcioActionsType,
-  RcioDispatchContext,
-  RcioStateContext,
-} from '../react-scrollspy-io-reducer';
+import { RcioActionsType, RcioDispatchContext, RcioStateContext } from '../react-scrollspy-io-reducer';
 
-const SpyOn = (
+const SpyOn: FC<PropsWithChildren<{ id: string }>> = (
   props: PropsWithChildren<{
     id: string;
-  }>
+  }>,
 ) => {
   const { children, id } = props;
   const { ObserverProps } = useContext(RcioStateContext);
@@ -27,10 +23,7 @@ const SpyOn = (
     });
   }, [id, dispatch]);
 
-  const handleOnChange = (
-    e: IntersectionObserverEntry,
-    unobserve: Unobserve
-  ) => {
+  const handleOnChange = (e: IntersectionObserverEntry, unobserve: Unobserve) => {
     if (e.isIntersecting) {
       const targetId = id;
       dispatch({
@@ -38,8 +31,7 @@ const SpyOn = (
         payload: { intersectingId: targetId },
       });
     }
-    typeof ObserverProps?.onChange === 'function' &&
-      ObserverProps.onChange(e, unobserve);
+    typeof ObserverProps?.onChange === 'function' && ObserverProps.onChange(e, unobserve);
   };
 
   return (

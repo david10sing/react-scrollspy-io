@@ -3,6 +3,8 @@
     "allowSyntheticDefaultImports": true,
     "allowJs": true,
     "baseUrl": "./src",
+    "declaration": true,
+    "noEmit": false,
     "jsx": "react",
     "module": "es6",
     "moduleResolution": "node",
