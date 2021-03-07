@@ -1,15 +1,15 @@
 {
   "name": "react-scrollspy-io",
-  "version": "1.1.7",
+  "version": "1.1.8",
   "description": "Package offering a scrollspy using intersection observer",
   "main": "dist/index.js",
-  "types": "index.d.ts",
+  "types": "dist/index.d.ts",
   "files": [
     "dist/**/*"
   ],
   "repository": {
     "type": "git",
-    "url": "git@github.com:david10sing/package-template.git"
+    "url": "git@github.com:david10sing/react-scrollspy-io.git"
   },
   "author": "David Ten Sing <david10sing@hotmail.com>",
   "license": "MIT",
