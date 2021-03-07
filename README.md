@@ -5,13 +5,12 @@ Package created to provide a way to create a scrollspy which uses intersection o
 It also allows you to scroll to the desired section.
 
 ## Getting started
-___
 
 ```plaintext
 npm install --save react-scrollspy-io
 ```
+
 ## Usage
-___
 
 To see how to use this component, run `yarn storybook` or look at the stories to understand how to use it.
 
@@ -148,7 +147,6 @@ export const Example = () => {
 As you can see, you can have multiple `SpyOn` components with the same `id` to fine tune the control of when you want the `Spy` and `SpyItem` component to show as active.
 
 ## Caveats
-_____
 
 IntersectionObserver is not supported by all browsers.
 
