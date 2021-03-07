@@ -7,6 +7,7 @@ import { RcioActionsType, RcioDispatchContext, RcioReducer, RcioState, RcioState
 import 'bootstrap/dist/css/bootstrap.min.css';
 interface ScrollspyIOProps {
   ObserverProps?: Options;
+  initialActiveId?: string;
 }
 
 /**
@@ -30,7 +31,7 @@ interface ScrollspyIOProps {
 const initialState: RcioState = { ids: [] };
 
 const ScrollspyIO: FC<PropsWithChildren<ScrollspyIOProps>> = (props: PropsWithChildren<ScrollspyIOProps>): ReactElement => {
-  const { children, ObserverProps } = props;
+  const { children, initialActiveId, ObserverProps } = props;
   const [state, dispatch] = useReducer(RcioReducer, initialState);
 
   useEffect(() => {
@@ -39,6 +40,13 @@ const ScrollspyIO: FC<PropsWithChildren<ScrollspyIOProps>> = (props: PropsWithCh
       payload: { ObserverProps },
     });
   }, [dispatch, ObserverProps]);
+
+  useEffect(() => {
+    dispatch({
+      type: RcioActionsType.setIntersectingId,
+      payload: { intersectingId: initialActiveId },
+    });
+  }, [dispatch, initialActiveId]);
 
   return (
     <RcioDispatchContext.Provider value={dispatch}>

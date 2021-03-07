@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 // also exported from '@storybook/react' if you can deal with breaking changes in 6.1
 import { Meta } from '@storybook/react/types-6-0';
 import { Col, Container, Row } from 'react-bootstrap';
@@ -11,9 +11,9 @@ export default {
   component: ScrollspyIO,
 } as Meta;
 
-export const Example = () => {
+export const Example = (): ReactElement => {
   const handleOnChange = (e: IntersectionObserverEntry) => {
-    // console.log(e);
+    console.log(e);
   };
 
   const ObserverProps = {
@@ -22,7 +22,7 @@ export const Example = () => {
   };
 
   return (
-    <ScrollspyIO ObserverProps={ObserverProps}>
+    <ScrollspyIO initialActiveId='section1' ObserverProps={ObserverProps}>
       <Container fluid>
         <Row>
           <Col md='2'>
@@ -110,78 +110,6 @@ export const Example = () => {
             <SpyOn id='section3'>
               <section id='section3'>
                 <h1>Section 3</h1>
-                <p>
-                  Id dolore sunt id aute pariatur aute velit ad nisi culpa in. Consectetur amet aliqua cupidatat ea anim labore deserunt
-                  sint. Fugiat deserunt excepteur exercitation consectetur consectetur quis non in pariatur ut nisi. Ad ipsum minim non
-                  duis. Elit culpa ullamco dolor ipsum sit. Anim irure amet cupidatat mollit est laborum. Cillum exercitation fugiat elit
-                  officia reprehenderit ad sit ea laboris non in dolore.
-                </p>
-                <p>
-                  Id dolore sunt id aute pariatur aute velit ad nisi culpa in. Consectetur amet aliqua cupidatat ea anim labore deserunt
-                  sint. Fugiat deserunt excepteur exercitation consectetur consectetur quis non in pariatur ut nisi. Ad ipsum minim non
-                  duis. Elit culpa ullamco dolor ipsum sit. Anim irure amet cupidatat mollit est laborum. Cillum exercitation fugiat elit
-                  officia reprehenderit ad sit ea laboris non in dolore.
-                </p>
-                <p>
-                  Id dolore sunt id aute pariatur aute velit ad nisi culpa in. Consectetur amet aliqua cupidatat ea anim labore deserunt
-                  sint. Fugiat deserunt excepteur exercitation consectetur consectetur quis non in pariatur ut nisi. Ad ipsum minim non
-                  duis. Elit culpa ullamco dolor ipsum sit. Anim irure amet cupidatat mollit est laborum. Cillum exercitation fugiat elit
-                  officia reprehenderit ad sit ea laboris non in dolore.
-                </p>
-                <p>
-                  Id dolore sunt id aute pariatur aute velit ad nisi culpa in. Consectetur amet aliqua cupidatat ea anim labore deserunt
-                  sint. Fugiat deserunt excepteur exercitation consectetur consectetur quis non in pariatur ut nisi. Ad ipsum minim non
-                  duis. Elit culpa ullamco dolor ipsum sit. Anim irure amet cupidatat mollit est laborum. Cillum exercitation fugiat elit
-                  officia reprehenderit ad sit ea laboris non in dolore.
-                </p>
-                <p>
-                  Id dolore sunt id aute pariatur aute velit ad nisi culpa in. Consectetur amet aliqua cupidatat ea anim labore deserunt
-                  sint. Fugiat deserunt excepteur exercitation consectetur consectetur quis non in pariatur ut nisi. Ad ipsum minim non
-                  duis. Elit culpa ullamco dolor ipsum sit. Anim irure amet cupidatat mollit est laborum. Cillum exercitation fugiat elit
-                  officia reprehenderit ad sit ea laboris non in dolore.
-                </p>
-                <p>
-                  Id dolore sunt id aute pariatur aute velit ad nisi culpa in. Consectetur amet aliqua cupidatat ea anim labore deserunt
-                  sint. Fugiat deserunt excepteur exercitation consectetur consectetur quis non in pariatur ut nisi. Ad ipsum minim non
-                  duis. Elit culpa ullamco dolor ipsum sit. Anim irure amet cupidatat mollit est laborum. Cillum exercitation fugiat elit
-                  officia reprehenderit ad sit ea laboris non in dolore.
-                </p>
-                <p>
-                  Id dolore sunt id aute pariatur aute velit ad nisi culpa in. Consectetur amet aliqua cupidatat ea anim labore deserunt
-                  sint. Fugiat deserunt excepteur exercitation consectetur consectetur quis non in pariatur ut nisi. Ad ipsum minim non
-                  duis. Elit culpa ullamco dolor ipsum sit. Anim irure amet cupidatat mollit est laborum. Cillum exercitation fugiat elit
-                  officia reprehenderit ad sit ea laboris non in dolore.
-                </p>
-                <p>
-                  Id dolore sunt id aute pariatur aute velit ad nisi culpa in. Consectetur amet aliqua cupidatat ea anim labore deserunt
-                  sint. Fugiat deserunt excepteur exercitation consectetur consectetur quis non in pariatur ut nisi. Ad ipsum minim non
-                  duis. Elit culpa ullamco dolor ipsum sit. Anim irure amet cupidatat mollit est laborum. Cillum exercitation fugiat elit
-                  officia reprehenderit ad sit ea laboris non in dolore.
-                </p>
-                <p>
-                  Id dolore sunt id aute pariatur aute velit ad nisi culpa in. Consectetur amet aliqua cupidatat ea anim labore deserunt
-                  sint. Fugiat deserunt excepteur exercitation consectetur consectetur quis non in pariatur ut nisi. Ad ipsum minim non
-                  duis. Elit culpa ullamco dolor ipsum sit. Anim irure amet cupidatat mollit est laborum. Cillum exercitation fugiat elit
-                  officia reprehenderit ad sit ea laboris non in dolore.
-                </p>
-                <p>
-                  Id dolore sunt id aute pariatur aute velit ad nisi culpa in. Consectetur amet aliqua cupidatat ea anim labore deserunt
-                  sint. Fugiat deserunt excepteur exercitation consectetur consectetur quis non in pariatur ut nisi. Ad ipsum minim non
-                  duis. Elit culpa ullamco dolor ipsum sit. Anim irure amet cupidatat mollit est laborum. Cillum exercitation fugiat elit
-                  officia reprehenderit ad sit ea laboris non in dolore.
-                </p>
-                <p>
-                  Id dolore sunt id aute pariatur aute velit ad nisi culpa in. Consectetur amet aliqua cupidatat ea anim labore deserunt
-                  sint. Fugiat deserunt excepteur exercitation consectetur consectetur quis non in pariatur ut nisi. Ad ipsum minim non
-                  duis. Elit culpa ullamco dolor ipsum sit. Anim irure amet cupidatat mollit est laborum. Cillum exercitation fugiat elit
-                  officia reprehenderit ad sit ea laboris non in dolore.
-                </p>
-                <p>
-                  Id dolore sunt id aute pariatur aute velit ad nisi culpa in. Consectetur amet aliqua cupidatat ea anim labore deserunt
-                  sint. Fugiat deserunt excepteur exercitation consectetur consectetur quis non in pariatur ut nisi. Ad ipsum minim non
-                  duis. Elit culpa ullamco dolor ipsum sit. Anim irure amet cupidatat mollit est laborum. Cillum exercitation fugiat elit
-                  officia reprehenderit ad sit ea laboris non in dolore.
-                </p>
                 <p>
                   Id dolore sunt id aute pariatur aute velit ad nisi culpa in. Consectetur amet aliqua cupidatat ea anim labore deserunt
                   sint. Fugiat deserunt excepteur exercitation consectetur consectetur quis non in pariatur ut nisi. Ad ipsum minim non
