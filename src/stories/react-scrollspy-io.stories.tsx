@@ -30,6 +30,7 @@ export const Example = (): ReactElement => {
               <SpyItem target='section1'>Section 1</SpyItem>
               <SpyItem target='section2'>Section 2</SpyItem>
               <SpyItem target='section3'>Section 3</SpyItem>
+              <SpyItem target='section4'>Section 4</SpyItem>
             </Spy>
           </Col>
           <Col>
@@ -116,6 +117,17 @@ export const Example = (): ReactElement => {
                   duis. Elit culpa ullamco dolor ipsum sit. Anim irure amet cupidatat mollit est laborum. Cillum exercitation fugiat elit
                   officia reprehenderit ad sit ea laboris non in dolore.
                 </p>
+                <p>
+                  Id dolore sunt id aute pariatur aute velit ad nisi culpa in. Consectetur amet aliqua cupidatat ea anim labore deserunt
+                  sint. Fugiat deserunt excepteur exercitation consectetur consectetur quis non in pariatur ut nisi. Ad ipsum minim non
+                  duis. Elit culpa ullamco dolor ipsum sit. Anim irure amet cupidatat mollit est laborum. Cillum exercitation fugiat elit
+                  officia reprehenderit ad sit ea laboris non in dolore.
+                </p>
+              </section>
+            </SpyOn>
+            <SpyOn id='section4'>
+              <section id='section4'>
+                <h1>Section 4</h1>
                 <p>
                   Id dolore sunt id aute pariatur aute velit ad nisi culpa in. Consectetur amet aliqua cupidatat ea anim labore deserunt
                   sint. Fugiat deserunt excepteur exercitation consectetur consectetur quis non in pariatur ut nisi. Ad ipsum minim non
